@@ -6,6 +6,7 @@
     <groupId>com.sandeep</groupId>
     <artifactId>codeshare</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>frontend</artifactId>
@@ -41,7 +42,7 @@
               <arguments>install</arguments>
             </configuration>
           </execution>
-          <execution>
+          <!--execution>
             <id>yarn lint</id>
             <goals>
               <goal>yarn</goal>
@@ -49,7 +50,7 @@
             <configuration>
               <arguments>lint</arguments>
             </configuration>
-          </execution>
+          </execution-->
           <execution>
             <id>yarn build</id>
             <goals>
