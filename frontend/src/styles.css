@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "style/css/dashboard.css";
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  border: 1px solid #ccc;
+  border-bottom: 3px solid #178909;
+}
