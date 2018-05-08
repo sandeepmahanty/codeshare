@@ -24,13 +24,13 @@ public class PlaygroundController {
         return VERSION;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "/")
     @RequestMapping(value = "default/{lang_id}", method = RequestMethod.GET)
     public ResponseEntity<DefaultCodeResponse> getDefaultCode(@PathVariable("lang_id") String languageId) {
         return new ResponseEntity<>(new DefaultCodeResponse(codeService.getDefaultCode(languageId), languageId), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "/")
     @PostMapping("/execute")
     public ResponseEntity<ExecuteCodeResponse> executeCode(@RequestBody ExecuteCodeRequest executeCodeRequest) throws Exception{
         //TODO: instead of language we need to map it to id to see a history of all runs

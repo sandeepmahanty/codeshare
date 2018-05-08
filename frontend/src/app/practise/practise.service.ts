@@ -4,8 +4,8 @@ import {ExecuteCodeRequest} from "./practise.component";
 
 @Injectable()
 export class PractiseService {
-  defaultCodeUrl = "http://localhost:8080/api/default/";
-  executeCodeUrl = "http://localhost:8080/api/execute";
+  defaultCodeUrl = "/api/default/";
+  executeCodeUrl = "/api/execute";
 
   constructor(private httpClient: HttpClient) {
   }
