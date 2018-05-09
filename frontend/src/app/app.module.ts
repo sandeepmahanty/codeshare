@@ -7,8 +7,9 @@ import {SessionComponent} from './session/session.component';
 import {PractiseComponent} from './practise/practise.component';
 import {ErrorComponent} from './error/error.component';
 import {RouterModule, Routes} from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {PractiseService} from './practise/practise.service';
+
 
 const appRoutes: Routes = [
   {
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'playground',
+    path: 'playground/:id',
     component: PractiseComponent
   },
   {
@@ -49,3 +50,4 @@ const appRoutes: Routes = [
 })
 export class AppModule {
 }
+

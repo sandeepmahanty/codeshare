@@ -5,21 +5,35 @@
         <div class="row">
           <div class="col-md-12 col-lg-12">
             <div class="form-group">
-              <label class="form-label">Textarea <span class="form-label-small">56/100</span></label>
-              <textarea class="form-control" id="code-editor" name="example-textarea-input" rows="6"
+              <label class="form-label">NOTEBOOK: {{notebookId}} <span class="form-label-small">56/100</span></label>
+              <textarea class="form-control" #codeEditor id="code-editor" name="example-textarea-input" rows="6"
                         placeholder="Content..">Oh! Come and see the violence inherent in the system! Help, help, I'm being repressed! We shall say 'Ni' again to you, if you do not appease us. I'm not a witch. I'm not a witch. Camelot!</textarea>
             </div>
             <div class="form-group">
-              <label class="custom-switch">
-                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                       (change)="toggle()">
+              <label class="custom-switch float-right">
+                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" (change)="toggle()">
+                <span class="custom-switch-description">INPUT &nbsp;</span>
                 <span class="custom-switch-indicator"></span>
-                <span class="custom-switch-description form-label">Use custom input</span>
               </label>
               <div [hidden]="customInputBoxState">
                 <div class="form-group">
                   <textarea class="form-control" id="custom-input" name="example-textarea-input" rows="6"
                             placeholder="Content..">Oh! Come and see the violence inherent in the system! Help, help, I'm being repressed! We shall say 'Ni' again to you, if you do not appease us. I'm not a witch. I'm not a witch. Camelot!</textarea>
+                </div>
+              </div>
+              <br/>
+              <span class="custom-switch-description form-label">OUTPUT</span>
+              <div class="tab-content" style="border: 1px solid #ccc">
+                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div class="col-md-12" id="output-console" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                    <ng-container *ngFor="let output of outputs | async">
+                      <div class="message">
+                        <span class="form-label" [ngClass]="{ 'text-danger': output.isError == true,
+                                    'text-success':   output.isError == false }">#{{output.isError?"Failure":"Success"}} #{{output.time|number:'1.2-2'}}s</span>
+                        <pre>{{ output.content }}</pre>
+                      </div>
+                    </ng-container>
+                  </div>
                 </div>
               </div>
             </div>
@@ -37,9 +51,7 @@
   <footer class="footer fixed-bottom">
     <div class="container">
       <div class="row align-items-center flex-row-reverse">
-        <div class="col-md-12" id="output-console">
-          Output will be displayed here
-        </div>
+
       </div>
     </div>
   </footer>

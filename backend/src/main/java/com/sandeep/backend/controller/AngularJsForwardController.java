@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AngularJsForwardController {
-    @RequestMapping(value = "/**/{[path:[^\\.]*}")
+    @RequestMapping(value ={ "/playground*","/session*","/playground/*"})
     public String redirect() {
         return "forward:/";
     }
 }
+//,"/**/{[path:[^\\.]*}"

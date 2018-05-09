@@ -2,6 +2,7 @@ package com.sandeep.backend.service;
 
 import com.sandeep.backend.model.code.Code;
 import com.sandeep.backend.model.request.ExecuteCodeRequest;
+import com.sandeep.backend.model.response.ExecuteCodeResponse;
 import com.sandeep.backend.repository.CodeRepository;
 import org.apache.logging.log4j.LogManager;
 
@@ -35,7 +36,7 @@ public class CodeService {
         return DEFAULT_CODE;
     }
 
-    public String executeCode(ExecuteCodeRequest request) throws Exception {
+    public ExecuteCodeResponse executeCode(ExecuteCodeRequest request) throws Exception {
         return javaCompilerService.compileCode(request);
     }
 }

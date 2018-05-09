@@ -25,7 +25,9 @@
         "style/css/codemirror/codemirror.css",
         "style/css/codemirror/theme/idea.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "style/js/bootstrap/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

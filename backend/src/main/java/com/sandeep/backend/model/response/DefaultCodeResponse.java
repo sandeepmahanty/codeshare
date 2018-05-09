@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class DefaultCodeResponse {
+public class DefaultCodeResponse extends AbstractResponse{
     private String content;
     private String language;
 }
